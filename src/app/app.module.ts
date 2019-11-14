@@ -1,19 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PlayersListComponent } from './pages/players-list/players-list.component';
-import { PlayerComponent } from './components/player/player.component';
-import {MatButtonModule, MatListModule, MatToolbarModule} from '@angular/material';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PlayersListComponent} from './pages/players-list/players-list.component';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatToolbarModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
+import {PlayerDetailsComponent} from './pages/player-details/player-details.component';
+import {ErrorPageComponent} from './pages/error-page/error-page.component';
+import { PlayerFormComponent } from './pages/player-form/player-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayersListComponent,
-    PlayerComponent
+    PlayerDetailsComponent,
+    ErrorPageComponent,
+    PlayerFormComponent
   ],
   imports: [
     BrowserModule,
@@ -22,9 +27,14 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -23,4 +23,7 @@ export class PlayersService {
     return this.http.delete(`${settings.apiUrl}/player/${id}`);
   }
 
+  createPlayer(player) {
+    return this.http.post(`${settings.apiUrl}/player`, player);
+  }
 }

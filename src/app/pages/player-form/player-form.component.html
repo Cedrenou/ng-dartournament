@@ -1,0 +1,18 @@
+<form [formGroup]="playerForm" (submit)="createNewPlayer(formDirective)" #formDirective="ngForm">
+  <mat-form-field>
+    <input matInput
+           placeholder="Prénom"
+           formControlName="firstName"
+           required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Nom"
+           formControlName="lastName"
+           required>
+  </mat-form-field>
+  <button mat-raised-button
+          color="primary"
+          type="submit">Créer
+  </button>
+</form>

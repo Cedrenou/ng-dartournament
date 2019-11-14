@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Player} from '../../models/player.model';
 import {PlayersService} from '../../services/players.service';
+import {Player} from '../../models/player.model';
 
 @Component({
   selector: 'app-players-list',
@@ -15,13 +15,21 @@ export class PlayersListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.playerService.getAllPlayers().subscribe(players => {
-      this.playerList = players;
-      console.log(players);
+    this.playerService.getAllPlayers().subscribe(data => {
+      console.log(data);
+      this.refresh(data);
     });
   }
 
   deletePlayer(id) {
-    this.playerService.deletePlayer(id).subscribe();
+    this.playerService.deletePlayer(id).subscribe(data => {
+      this.refresh(data);
+    });
+  }
+
+  refresh(data) {
+    this.playerService.getAllPlayers().subscribe((players) => {
+      this.playerList = players;
+    });
   }
 }
