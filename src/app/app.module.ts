@@ -10,7 +10,7 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatListModule,
+  MatListModule, MatSortModule,
   MatTableModule,
   MatToolbarModule
 } from '@angular/material';
@@ -42,6 +42,7 @@ import { PlayerTableComponent } from './pages/player-table/player-table.componen
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatSortModule,
     ReactiveFormsModule
   ],
   providers: [],

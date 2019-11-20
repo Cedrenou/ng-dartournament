@@ -21,13 +21,13 @@ export class PlayerFormComponent implements OnInit {
     this.playerForm = this.fb.group({
       firstName: '',
       lastName: '',
-      points: 0
+      points: null
     });
   }
 
   createNewPlayer(formDirective: FormGroupDirective) {
     if (this.playerForm.valid) {
-      this.playerService.createPlayer(this.playerForm.value).subscribe(data => {
+      this.playerService.createPlayer(this.playerForm.value).subscribe(() => {
         formDirective.resetForm();
         this.playerForm.reset();
       }, error => console.log(error));
