@@ -26,4 +26,31 @@ export class PlayersService {
   createPlayer(player) {
     return this.http.post(`${settings.apiUrl}/player`, player);
   }
+
+  playerFirstPlace(id, points) {
+    const body = {
+      _id: id,
+      points: points
+    };
+
+    return this.http.post(`${settings.apiUrl}/player/first-place`, body);
+  }
+
+  playerSecondPlace(id, points) {
+    const body = {
+      _id: id,
+      points: points
+    };
+
+    return this.http.post(`${settings.apiUrl}/player/second-place`, body);
+  }
+
+  playerThirdPlace(id, points) {
+    const body = {
+      _id: id,
+      points: points
+    };
+
+    return this.http.post(`${settings.apiUrl}/player/third-place`, body);
+  }
 }

@@ -5,12 +5,21 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PlayersListComponent} from './pages/players-list/players-list.component';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {PlayerDetailsComponent} from './pages/player-details/player-details.component';
 import {ErrorPageComponent} from './pages/error-page/error-page.component';
 import { PlayerFormComponent } from './pages/player-form/player-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PlayerTableComponent } from './pages/player-table/player-table.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +27,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     PlayersListComponent,
     PlayerDetailsComponent,
     ErrorPageComponent,
-    PlayerFormComponent
+    PlayerFormComponent,
+    PlayerTableComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +41,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     ReactiveFormsModule
   ],
   providers: [],
