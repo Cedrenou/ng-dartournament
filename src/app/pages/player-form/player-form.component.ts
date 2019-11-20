@@ -21,7 +21,11 @@ export class PlayerFormComponent implements OnInit {
     this.playerForm = this.fb.group({
       firstName: '',
       lastName: '',
-      points: null
+      points: null,
+      nbGamesPlayed: null,
+      nbFirstPlace: null,
+      nbSecondPlace: null,
+      nbThirdPlace: null
     });
   }
 

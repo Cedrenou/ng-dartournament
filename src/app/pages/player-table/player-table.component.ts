@@ -10,7 +10,7 @@ import {MatSort, MatTableDataSource} from '@angular/material';
 export class PlayerTableComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  displayedColumns: string[] = ['name', 'points', 'actions'];
+  displayedColumns: string[] = ['name', 'points', 'nbGamedPlayed', 'nbFirstPlace', 'nbSecondPlace', 'nbThirdPlace', 'actions'];
   dataSource;
 
   constructor(private playerService: PlayersService) {
@@ -24,18 +24,18 @@ export class PlayerTableComponent implements OnInit {
     });
   }
 
-  playerFirstPlace(id, points) {
-    this.playerService.playerFirstPlace(id, points)
+  playerFirstPlace(id, points, nbFirstPlace) {
+    this.playerService.playerFirstPlace(id, points, nbFirstPlace)
       .subscribe(() => this.refresh());
   }
 
-  playerSecondPlace(id, points) {
-    this.playerService.playerSecondPlace(id, points)
+  playerSecondPlace(id, points, nbSecondPlace) {
+    this.playerService.playerSecondPlace(id, points, nbSecondPlace)
       .subscribe(() => this.refresh());
   }
 
-  playerThirdPlace(id, points) {
-    this.playerService.playerThirdPlace(id, points)
+  playerThirdPlace(id, points, nbThirdPlace) {
+    this.playerService.playerThirdPlace(id, points, nbThirdPlace)
       .subscribe(() => this.refresh());
   }
 

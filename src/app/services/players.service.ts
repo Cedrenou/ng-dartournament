@@ -27,28 +27,31 @@ export class PlayersService {
     return this.http.post(`${settings.apiUrl}/player`, player);
   }
 
-  playerFirstPlace(id, points) {
+  playerFirstPlace(id, points, nbFirstPlace) {
     const body = {
       _id: id,
-      points: points
+      points: points,
+      nbFirstPlace: nbFirstPlace
     };
 
     return this.http.post(`${settings.apiUrl}/player/first-place`, body);
   }
 
-  playerSecondPlace(id, points) {
+  playerSecondPlace(id, points, nbSecondPlace) {
     const body = {
       _id: id,
-      points: points
+      points: points,
+      nbSecondPlace: nbSecondPlace
     };
 
     return this.http.post(`${settings.apiUrl}/player/second-place`, body);
   }
 
-  playerThirdPlace(id, points) {
+  playerThirdPlace(id, points, nbThirdPlace) {
     const body = {
       _id: id,
-      points: points
+      points: points,
+      nbThirdPlace: nbThirdPlace
     };
 
     return this.http.post(`${settings.apiUrl}/player/third-place`, body);
