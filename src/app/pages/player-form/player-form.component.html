@@ -1,18 +1,24 @@
-<form [formGroup]="playerForm" (submit)="createNewPlayer(formDirective)" #formDirective="ngForm">
-  <mat-form-field>
-    <input matInput
-           placeholder="Prénom"
-           formControlName="firstName"
-           required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput
-           placeholder="Nom"
-           formControlName="lastName"
-           required>
-  </mat-form-field>
-  <button mat-raised-button
-          color="primary"
-          type="submit">Ajouter
-  </button>
-</form>
+<mat-card>
+  <h1>Create new player</h1>
+
+  <form [formGroup]="playerForm" (submit)="createNewPlayer(formDirective)" #formDirective="ngForm">
+    <div class="display-column">
+      <mat-form-field  [appearance]="'outline'">
+        <input matInput
+               placeholder="Prénom"
+               formControlName="firstName"
+               required>
+      </mat-form-field>
+      <mat-form-field [appearance]="'outline'">
+        <input matInput
+               placeholder="Nom"
+               formControlName="lastName"
+               required>
+      </mat-form-field>
+      <button mat-raised-button
+              color="primary"
+              type="submit">Ajouter
+      </button>
+    </div>
+  </form>
+</mat-card>

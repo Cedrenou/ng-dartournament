@@ -26,6 +26,12 @@ export class PlayersListComponent implements OnInit {
     });
   }
 
+  razPlayerPoint(playerId) {
+    this.playerService.razPlayerPoint(playerId).subscribe(data => {
+      this.refresh(data);
+    });
+  }
+
   refresh(data) {
     this.playerService.getAllPlayers().subscribe((players) => {
       this.playerList = players;

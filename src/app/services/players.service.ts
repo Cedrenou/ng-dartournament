@@ -23,6 +23,13 @@ export class PlayersService {
     return this.http.delete(`${settings.apiUrl}/player/${id}`);
   }
 
+  razPlayerPoint(playerId) {
+    const body = {
+      _id: playerId
+    };
+    return this.http.post(`${settings.apiUrl}/player/raz`, body)
+  }
+
   createPlayer(player) {
     return this.http.post(`${settings.apiUrl}/player`, player);
   }

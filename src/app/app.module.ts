@@ -12,7 +12,7 @@ import {
   MatInputModule,
   MatListModule, MatSortModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {PlayerDetailsComponent} from './pages/player-details/player-details.component';
@@ -20,6 +20,7 @@ import {ErrorPageComponent} from './pages/error-page/error-page.component';
 import { PlayerFormComponent } from './pages/player-form/player-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { PlayerTableComponent } from './pages/player-table/player-table.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PlayerTableComponent } from './pages/player-table/player-table.componen
     PlayerDetailsComponent,
     ErrorPageComponent,
     PlayerFormComponent,
-    PlayerTableComponent
+    PlayerTableComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { PlayerTableComponent } from './pages/player-table/player-table.componen
     MatInputModule,
     MatTableModule,
     MatSortModule,
+    MatTooltipModule,
     ReactiveFormsModule
   ],
   providers: [],

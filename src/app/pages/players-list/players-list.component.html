@@ -1,14 +1,9 @@
-<app-player-form></app-player-form>
-
-<mat-card *ngFor="let player of playerList" class="example-card">
-  <mat-card-header class="no-margin">
-    <div mat-card-avatar></div>
-    <mat-card-title>{{player.firstName}} {{player.lastName}}</mat-card-title>
-    <mat-card-subtitle>{{player.points}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-actions>
+<mat-list class="list-container">
+  <mat-list-item *ngFor="let player of playerList">
+    <span>{{player.firstName}} {{player.lastName}} - {{player.points}}</span>
     <button mat-button color="primary" [routerLink]="['/players', player._id]">DETAILS</button>
     <button mat-button color="warn" (click)="deletePlayer(player._id)">DELETE</button>
-  </mat-card-actions>
-</mat-card>
-
+    <button mat-button color="accent" (click)="razPlayerPoint(player._id)">RAZ</button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

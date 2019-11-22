@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {PlayersListComponent} from './pages/players-list/players-list.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {PlayerDetailsComponent} from './pages/player-details/player-details.component';
 import {ErrorPageComponent} from './pages/error-page/error-page.component';
 import {PlayerTableComponent} from './pages/player-table/player-table.component';
+import {AdminComponent} from './pages/admin/admin.component';
 
 
 const routes: Routes = [
-  {path: 'players-list', component: PlayersListComponent},
+  {path: '', component: PlayerTableComponent},
   {path: 'players/:id', component: PlayerDetailsComponent},
   {path: 'players-ranking', component: PlayerTableComponent},
+  {path: 'admin', component: AdminComponent},
   {path: '**', component: ErrorPageComponent}
 ];
 
