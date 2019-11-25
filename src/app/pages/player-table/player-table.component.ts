@@ -24,18 +24,18 @@ export class PlayerTableComponent implements OnInit {
     });
   }
 
-  playerFirstPlace(id, points, nbFirstPlace) {
-    this.playerService.playerFirstPlace(id, points, nbFirstPlace)
+  playerFirstPlace(id, points, nbFirstPlace, nbGamesPlayed) {
+    this.playerService.playerFirstPlace(id, points, nbFirstPlace,nbGamesPlayed)
       .subscribe(() => this.refresh());
   }
 
-  playerSecondPlace(id, points, nbSecondPlace) {
-    this.playerService.playerSecondPlace(id, points, nbSecondPlace)
+  playerSecondPlace(id, points, nbSecondPlace, nbGamesPlayed) {
+    this.playerService.playerSecondPlace(id, points, nbSecondPlace, nbGamesPlayed)
       .subscribe(() => this.refresh());
   }
 
-  playerThirdPlace(id, points, nbThirdPlace) {
-    this.playerService.playerThirdPlace(id, points, nbThirdPlace)
+  playerThirdPlace(id, points, nbThirdPlace, nbGamesPlayed) {
+    this.playerService.playerThirdPlace(id, points, nbThirdPlace, nbGamesPlayed)
       .subscribe(() => this.refresh());
   }
 

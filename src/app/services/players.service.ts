@@ -27,38 +27,41 @@ export class PlayersService {
     const body = {
       _id: playerId
     };
-    return this.http.post(`${settings.apiUrl}/player/raz`, body)
+    return this.http.post(`${settings.apiUrl}/player/raz`, body);
   }
 
   createPlayer(player) {
     return this.http.post(`${settings.apiUrl}/player`, player);
   }
 
-  playerFirstPlace(id, points, nbFirstPlace) {
+  playerFirstPlace(id, points, nbFirstPlace, nbGamesPlayed) {
     const body = {
       _id: id,
       points: points,
-      nbFirstPlace: nbFirstPlace
+      nbFirstPlace: nbFirstPlace,
+      nbGamesPlayed: nbGamesPlayed
     };
 
     return this.http.post(`${settings.apiUrl}/player/first-place`, body);
   }
 
-  playerSecondPlace(id, points, nbSecondPlace) {
+  playerSecondPlace(id, points, nbSecondPlace, nbGamesPlayed) {
     const body = {
       _id: id,
       points: points,
-      nbSecondPlace: nbSecondPlace
+      nbSecondPlace: nbSecondPlace,
+      nbGamesPlayed: nbGamesPlayed
     };
 
     return this.http.post(`${settings.apiUrl}/player/second-place`, body);
   }
 
-  playerThirdPlace(id, points, nbThirdPlace) {
+  playerThirdPlace(id, points, nbThirdPlace, nbGamesPlayed) {
     const body = {
       _id: id,
       points: points,
-      nbThirdPlace: nbThirdPlace
+      nbThirdPlace: nbThirdPlace,
+      nbGamesPlayed: nbGamesPlayed
     };
 
     return this.http.post(`${settings.apiUrl}/player/third-place`, body);
