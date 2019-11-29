@@ -19,6 +19,10 @@ export class PlayersService {
     return this.http.get(`${settings.apiUrl}/player/${id}`);
   }
 
+  getTopPlayer() {
+    return this.http.get(`${settings.apiUrl}/top-player`)
+  }
+
   deletePlayer(id) {
     return this.http.delete(`${settings.apiUrl}/player/${id}`);
   }

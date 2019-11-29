@@ -4,7 +4,13 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Nom</th>
-      <td mat-cell *matCellDef="let player">{{player.firstName}} {{player.lastName}}</td>
+      <td mat-cell *matCellDef="let player">
+        <fa-icon *ngIf="player._id === topPlayerId"
+                 [icon]="faFire"
+                 id="top-player"
+                 [size]="'2x'"></fa-icon>
+        {{player.firstName}} {{player.lastName}}
+      </td>
     </ng-container>
 
     <!-- Points Column -->

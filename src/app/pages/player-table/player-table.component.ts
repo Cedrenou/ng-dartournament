@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PlayersService} from '../../services/players.service';
 import {MatSort, MatTableDataSource} from '@angular/material';
+import {faFire} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-player-table',
@@ -8,6 +9,9 @@ import {MatSort, MatTableDataSource} from '@angular/material';
   styleUrls: ['./player-table.component.scss']
 })
 export class PlayerTableComponent implements OnInit {
+
+  faFire = faFire;
+  topPlayerId
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   displayedColumns: string[] = ['name', 'points', 'nbGamedPlayed', 'nbFirstPlace', 'nbSecondPlace', 'nbThirdPlace', 'actions'];
@@ -22,6 +26,14 @@ export class PlayerTableComponent implements OnInit {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
     });
+    this.getTopPlayer()
+  }
+
+  getTopPlayer() {
+    this.playerService.getTopPlayer().subscribe(topPlayer => {
+      this.topPlayerId = topPlayer[0]._id;
+      console.log(topPlayer[0]._id)
+    })
   }
 
   playerFirstPlace(id, points, nbFirstPlace, nbGamesPlayed) {
@@ -43,5 +55,6 @@ export class PlayerTableComponent implements OnInit {
     this.playerService.getAllPlayers().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
+    this.getTopPlayer()
   }
 }

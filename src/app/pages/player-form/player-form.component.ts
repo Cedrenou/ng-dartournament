@@ -25,7 +25,8 @@ export class PlayerFormComponent implements OnInit {
       nbGamesPlayed: null,
       nbFirstPlace: null,
       nbSecondPlace: null,
-      nbThirdPlace: null
+      nbThirdPlace: null,
+      topPlayer: false
     });
   }
 

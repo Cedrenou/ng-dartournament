@@ -9,18 +9,22 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule,
+  MatIconModule,
   MatInputModule,
-  MatListModule, MatSortModule,
+  MatListModule,
+  MatSortModule,
   MatTableModule,
-  MatToolbarModule, MatTooltipModule
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {PlayerDetailsComponent} from './pages/player-details/player-details.component';
 import {ErrorPageComponent} from './pages/error-page/error-page.component';
-import { PlayerFormComponent } from './pages/player-form/player-form.component';
+import {PlayerFormComponent} from './pages/player-form/player-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { PlayerTableComponent } from './pages/player-table/player-table.component';
-import { AdminComponent } from './pages/admin/admin.component';
+import {PlayerTableComponent} from './pages/player-table/player-table.component';
+import {AdminComponent} from './pages/admin/admin.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,7 @@ import { AdminComponent } from './pages/admin/admin.component';
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
+    MatIconModule,
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
@@ -46,6 +51,7 @@ import { AdminComponent } from './pages/admin/admin.component';
     MatTableModule,
     MatSortModule,
     MatTooltipModule,
+    FontAwesomeModule,
     ReactiveFormsModule
   ],
   providers: [],
