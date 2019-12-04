@@ -25,6 +25,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {PlayerTableComponent} from './pages/player-table/player-table.component';
 import {AdminComponent} from './pages/admin/admin.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {AngularSvgIconModule} from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AngularSvgIconModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
