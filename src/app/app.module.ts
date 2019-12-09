@@ -26,6 +26,7 @@ import {PlayerTableComponent} from './pages/player-table/player-table.component'
 import {AdminComponent} from './pages/admin/admin.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AngularSvgIconModule} from 'angular-svg-icon';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {AngularSvgIconModule} from 'angular-svg-icon';
     ErrorPageComponent,
     PlayerFormComponent,
     PlayerTableComponent,
-    AdminComponent
+    AdminComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

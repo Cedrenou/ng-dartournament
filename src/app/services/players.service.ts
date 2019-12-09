@@ -70,4 +70,13 @@ export class PlayersService {
 
     return this.http.post(`${settings.apiUrl}/player/third-place`, body);
   }
+
+  playerNoPoints(id, nbGamesPlayed) {
+    const body = {
+      _id: id,
+      nbGamesPlayed: nbGamesPlayed
+    }
+
+    return this.http.post(`${settings.apiUrl}/player/no-points`, body)
+  }
 }

@@ -11,7 +11,7 @@ import {faFire} from '@fortawesome/free-solid-svg-icons';
 export class PlayerTableComponent implements OnInit {
 
   faFire = faFire;
-  topPlayerId
+  topPlayerId;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   displayedColumns: string[] = ['name', 'points', 'nbGamedPlayed', 'nbFirstPlace', 'nbSecondPlace', 'nbThirdPlace', 'actions'];
@@ -26,18 +26,18 @@ export class PlayerTableComponent implements OnInit {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
     });
-    this.getTopPlayer()
+    this.getTopPlayer();
   }
 
   getTopPlayer() {
     this.playerService.getTopPlayer().subscribe(topPlayer => {
       this.topPlayerId = topPlayer[0]._id;
-      console.log(topPlayer[0]._id)
-    })
+      console.log(topPlayer[0]._id);
+    });
   }
 
   playerFirstPlace(id, points, nbFirstPlace, nbGamesPlayed) {
-    this.playerService.playerFirstPlace(id, points, nbFirstPlace,nbGamesPlayed)
+    this.playerService.playerFirstPlace(id, points, nbFirstPlace, nbGamesPlayed)
       .subscribe(() => this.refresh());
   }
 
@@ -51,10 +51,15 @@ export class PlayerTableComponent implements OnInit {
       .subscribe(() => this.refresh());
   }
 
+  playerNoPoints(id, nbGamesPlayed) {
+    this.playerService.playerNoPoints(id, nbGamesPlayed)
+      .subscribe(() => this.refresh())
+  }
+
   refresh() {
     this.playerService.getAllPlayers().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
-    this.getTopPlayer()
+    this.getTopPlayer();
   }
 }

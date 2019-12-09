@@ -1,0 +1,8 @@
+<p>dashboard works!</p>
+
+
+<div *ngFor="let player of allPlayers">
+  <span>{{player.firstName}} Ratio = ({{player.points}} / {{player.nbGamesPlayed}}) x 100 / 9</span>
+</div>
+
+<button (click)="calculateRatio()">calculate</button>

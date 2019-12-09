@@ -3,4 +3,8 @@ export interface Player {
   firstName: string;
   lastName: string;
   points: number;
+  nbFirstPlace: number;
+  nbGamesPlayed: number;
+  nbSecondPlace: number;
+  nbThirdPlace: number;
 }
