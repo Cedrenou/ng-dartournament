@@ -1,3 +1,3 @@
 export const settings = {
-  apiUrl: 'http://myappserverrpi.ddns.net:5000/api/v1',
+  apiUrl: 'https://myappserverrpi.ddns.net:5000/api/v1',
 }
