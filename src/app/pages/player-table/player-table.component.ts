@@ -6,7 +6,7 @@ import {faFire} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-player-table',
   templateUrl: './player-table.component.html',
-  styleUrls: ['./player-table.component.scss']
+  styleUrls: ['./player-table.component.scss'],
 })
 export class PlayerTableComponent implements OnInit {
 
@@ -37,23 +37,19 @@ export class PlayerTableComponent implements OnInit {
   }
 
   playerFirstPlace(id, points, nbFirstPlace, nbGamesPlayed) {
-    this.playerService.playerFirstPlace(id, points, nbFirstPlace, nbGamesPlayed)
-      .subscribe(() => this.refresh());
+    this.playerService.playerFirstPlace(id, points, nbFirstPlace, nbGamesPlayed).subscribe(() => this.refresh());
   }
 
   playerSecondPlace(id, points, nbSecondPlace, nbGamesPlayed) {
-    this.playerService.playerSecondPlace(id, points, nbSecondPlace, nbGamesPlayed)
-      .subscribe(() => this.refresh());
+    this.playerService.playerSecondPlace(id, points, nbSecondPlace, nbGamesPlayed).subscribe(() => this.refresh());
   }
 
   playerThirdPlace(id, points, nbThirdPlace, nbGamesPlayed) {
-    this.playerService.playerThirdPlace(id, points, nbThirdPlace, nbGamesPlayed)
-      .subscribe(() => this.refresh());
+    this.playerService.playerThirdPlace(id, points, nbThirdPlace, nbGamesPlayed).subscribe(() => this.refresh());
   }
 
   playerNoPoints(id, nbGamesPlayed) {
-    this.playerService.playerNoPoints(id, nbGamesPlayed)
-      .subscribe(() => this.refresh())
+    this.playerService.playerNoPoints(id, nbGamesPlayed).subscribe(() => this.refresh())
   }
 
   refresh() {

@@ -19,7 +19,8 @@
           *matHeaderCellDef
           mat-sort-header
           matTooltip="Total Points"
-          matTooltipPosition="above">Pts
+          matTooltipPosition="above"
+          matTooltipClass="example-tooltip-red">Pts
       </th>
       <td mat-cell *matCellDef="let player">
         <span>{{player.points}}</span>
@@ -31,6 +32,7 @@
       <th mat-header-cell
           *matHeaderCellDef
           mat-sort-header
+          matTooltipClass="example-tooltip-red"
           matTooltip="Partie joué"
           matTooltipPosition="above">PJ
       </th>
@@ -105,4 +107,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <app-tooltip></app-tooltip>
 </div>

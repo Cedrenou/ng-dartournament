@@ -26,7 +26,10 @@ import {PlayerTableComponent} from './pages/player-table/player-table.component'
 import {AdminComponent} from './pages/admin/admin.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AngularSvgIconModule} from 'angular-svg-icon';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import {TooltipComponent} from './shared/tooltip/tooltip.component';
+import {BarChartComponent} from './shared/bar-chart/bar-chart.component';
+import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -37,10 +40,13 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     PlayerFormComponent,
     PlayerTableComponent,
     AdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    TooltipComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
